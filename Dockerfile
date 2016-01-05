@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386 \
                                                   libstdc++6:i386 \
     && rm -rf /var/lib/apt/lists/*
 
-ENV GEEKBENCHVERSION Geekbench-3.3.0-Linux
+ENV GEEKBENCHVERSION Geekbench-3.3.2-Linux
 ENV GEEKBENCHPACKAGE $GEEKBENCHVERSION.tar.gz
 
 RUN wget --quiet --no-check-certificate http://cdn.primatelabs.com/$GEEKBENCHPACKAGE -O /tmp/$GEEKBENCHPACKAGE \
@@ -19,4 +19,4 @@ RUN wget --quiet --no-check-certificate http://cdn.primatelabs.com/$GEEKBENCHPAC
     && tar xzf /tmp/$GEEKBENCHPACKAGE -C /opt/geekbench \
     && rm -rf /tmp/$GEEKBENCHPACKAGE
 
-CMD ["/opt/geekbench/dist/Geekbench-3.3.0-Linux/geekbench"]
+CMD ["/opt/geekbench/dist/Geekbench-3.3.2-Linux/geekbench"]
